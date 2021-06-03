@@ -9,11 +9,13 @@
 </template>
 <script>
 import { Swiper, SwiperItem } from "../../../components/common/swiper/index";
+
 export default {
     name: "homeSwiper",
     components: {
         Swiper,
         SwiperItem,
+       
     },
     props: {
         banners: Array,
