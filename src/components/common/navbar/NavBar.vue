@@ -26,6 +26,6 @@ name:"NavBar"
 }
 .center{
   flex:1;
-  color: aliceblue;
+  color: rgb(21, 33, 44);
 }
 </style>

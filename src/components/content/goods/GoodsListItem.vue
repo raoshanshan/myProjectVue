@@ -1,6 +1,6 @@
 <template>
-    <div class="goodsItemList">
-        <img :src="goods_items.show.img" alt="" />
+    <div class="goodsItemList" @click="btnGoodsItem">
+        <img :src="goods_items.show.img" alt=""  @load="ImgLoadFinished" />
         <div class="goods_item_info">
             <p>{{ goods_items.title }}</p>
             <span class="price">{{ goods_items.price }}</span>
@@ -20,6 +20,17 @@ export default {
             },
         },
     },
+    methods:{
+      // 原生JS监听图片加载完成
+      ImgLoadFinished(){
+            // 事件总线,emit发射事件, goodsitem->goodsList->home
+            this.$bus.$emit('itemImageLoad')
+      },
+      // 单个商品点击
+      btnGoodsItem(){
+        this.$router.push('/detail/'+this.goods_items.iid)
+      }
+    }
 };
 </script>
 

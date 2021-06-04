@@ -25,6 +25,8 @@ export default {
     methods: {
         btn(index) {
             this.currentIndex = index;
+            // 点击事件传出到父组件，进行切换
+            this.$emit('tabClick',index)
         },
     },
     props: {
@@ -45,6 +47,7 @@ export default {
     font-size: 15px;
     line-height: 40px;
     background-color: #fff;
+    margin-bottom: 10px;
 }
 .tab-control-item {
     flex: 1;
